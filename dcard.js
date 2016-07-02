@@ -48,6 +48,8 @@ var FRIENDS_FOLDER = 'friends'
 
 try {
 
+process.chdir(__dirname)
+
 var loginInfo = JSON.parse(fs.readFileSync('loginInfo.json'));
 
 DcardAPI.login(loginInfo).then((x) => {
