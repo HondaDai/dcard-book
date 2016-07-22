@@ -31,7 +31,7 @@ var avatars = fs.readdirSync("dcard").map( (x) => {
       <div class="thumbnail">
         <img src="dcard/${x}/avatar.jpg" />
         <div class="caption">
-          <h3>${x}</h3>
+          <p>${x}</p>
         </div>
       </div>
     </div>
