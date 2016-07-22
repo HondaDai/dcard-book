@@ -73,7 +73,7 @@ DcardAPI.login(loginInfo).then((x) => {
     var INTRO_FOLDER = 'intro';
     var AVATAR_FOLDER = 'avatar';
 
-    console.log(friends.length)
+    //console.log(friends.length)
 
     // var friend = friends[0];
     friends.forEach( (friend) => {
@@ -105,12 +105,12 @@ DcardAPI.login(loginInfo).then((x) => {
       }
 
       if (needRecordInfo) {
-        console.log(JSON.stringify(friend, null, 2))
+        //console.log(JSON.stringify(friend, null, 2))
         writeFile(`${intro_folder_path}/${getDate()}.txt`, JSON.stringify(friend, null, 2))
       }
       
       if (needRecordAvatar) {
-        console.log(friend.avatar)
+        //console.log(friend.avatar)
         downloadFile(`${avatar_folder_path}/${getDate()}.jpg`, friend.avatar)
       }
 
