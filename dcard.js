@@ -36,7 +36,7 @@ var writeFile = (file_path, content) => {
 
 var uniqueArray = (arr) => {
   return arr.filter(function(elem, pos) {
-    return arr.indexOf(elem) == pos;
+    return arr.indexOf(elem) === pos;
   })
 }
 
@@ -128,7 +128,8 @@ DcardAPI.login(loginInfo).then((x) => {
 
         var new_msg_content = uniqueArray(
             msg_content.concat(msg).map( (x)=>{return JSON.stringify(x)} )
-        ).map( (x)=>{return JSON.parse(x)});
+        ).map( (x)=>{return JSON.parse(x)})
+         .sort( (a, b) => {return a.createdAt < b.createdAt});
         if ( JSON.stringify(new_msg_content) != JSON.stringify(msg_content) )
           writeFile(msg_file, JSON.stringify(new_msg_content, null, 2));
 
