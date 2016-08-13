@@ -18,7 +18,7 @@ var header = `
 
 <style>
 .avatar {
-  height: 300px;
+  max-height: 270px;
 }
 </style>
 
@@ -29,7 +29,7 @@ var avatars = fs.readdirSync("dcard").map( (x) => {
   return `
     <div class="col-sm-6 col-md-2">
       <div class="thumbnail">
-        <img src="dcard/${x}/avatar.jpg" />
+        <img src="dcard/${x}/avatar.jpg" class="avatar" />
         <div class="caption">
           <p>${x}</p>
         </div>
